@@ -28,4 +28,8 @@ describe("String Calculator", () => {
     expect(add("//***\n1***2***4")).to.equal(7);
     expect(add("//*[*]*\n1*[*]*2*[*]*4")).to.equal(7);
   });
+
+  it("when any negative number in the string throw error", () => {
+    expect(() => add("7,-7")).to.throw("negative numbers not allowed: -7");
+  });
 });
