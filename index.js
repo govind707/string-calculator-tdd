@@ -3,5 +3,8 @@ export const add = (numbers) => {
     return 0;
   }
 
-  return Number(numbers);
+  const numbersArray = numbers.split(",");
+  const sum = numbersArray.reduce((total, number) => total + Number(number), 0);
+
+  return sum;
 };
