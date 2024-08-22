@@ -5,4 +5,8 @@ describe("String Calculator", () => {
   it("when empty string return 0", () => {
     expect(add("")).to.equal(0);
   });
+
+  it("when one number is provided return the number itself", () => {
+    expect(add("7")).to.equal(7);
+  });
 });
