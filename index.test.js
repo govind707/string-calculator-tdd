@@ -32,4 +32,10 @@ describe("String Calculator", () => {
   it("when any negative number in the string throw error", () => {
     expect(() => add("7,-7")).to.throw("negative numbers not allowed: -7");
   });
+
+  it("when multiple negative numbers in the string throw error", () => {
+    expect(() => add("-3,-4,-7")).to.throw(
+      "negative numbers not allowed: -3, -4, -7"
+    );
+  });
 });
