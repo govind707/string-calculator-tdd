@@ -14,10 +14,21 @@ export const add = (numbers) => {
   }
 
   const numbersArray = numberString.replace(/\n/g, delimiter).split(delimiter);
-  const sum = numbersArray.reduce(
-    (total, number) => total + (Number(number) || 0),
-    0
-  );
+  let negativeNumbers = [];
+  const sum = numbersArray.reduce((total, number) => {
+    const currNumber = Number(number);
+    if (currNumber < 0) {
+      negativeNumbers.push(number);
+    }
+
+    return total + currNumber;
+  }, 0);
+
+  if (negativeNumbers.length > 0) {
+    throw new Error(
+      `negative numbers not allowed: ${negativeNumbers.join(", ")}`
+    );
+  }
 
   return sum;
 };
