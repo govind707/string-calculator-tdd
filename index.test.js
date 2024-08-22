@@ -13,4 +13,8 @@ describe("String Calculator", () => {
   it("when two comma-separated numbers return the sum of numbers", () => {
     expect(add("3,4")).to.equal(7);
   });
+
+  it("when multiple comma-separated numbers return the sum of numbers", () => {
+    expect(add("1,2,4")).to.equal(7);
+  });
 });
