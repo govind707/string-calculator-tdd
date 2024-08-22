@@ -21,4 +21,11 @@ describe("String Calculator", () => {
   it("when new lines between numbers return the sum of numbers", () => {
     expect(add("1\n2,4")).to.equal(7);
   });
+
+  it("when different delimiters present in the string return sum of numbers", () => {
+    expect(add("//;\n5;2")).to.equal(7);
+    expect(add("//|\n1|2|4")).to.equal(7);
+    expect(add("//***\n1***2***4")).to.equal(7);
+    expect(add("//*[*]*\n1*[*]*2*[*]*4")).to.equal(7);
+  });
 });
